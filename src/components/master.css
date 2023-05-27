@@ -34,3 +34,19 @@ body {
   background-color: #12c79a;
   border-color: #12c79a;
 }
+
+.listDash {
+  height: 390px;
+  overflow-y: auto;
+}
+.listDash::-webkit-scrollbar {
+  width: 0.3em;
+}
+
+.listDash::-webkit-scrollbar-thumb {
+  width: 5px;
+  background-color: #292929;
+}
+.listDash::-webkit-scrollbar-track {
+  background-color: #101014 !important;
+}

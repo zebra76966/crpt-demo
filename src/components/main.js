@@ -3,18 +3,19 @@ import Lchart from "./chartdemo";
 import Header from "./header";
 import Dash from "./dash";
 import "./master.css";
+import coindata from "./mockdata.json";
 import { useState } from "react";
 const Main = () => {
-  const [togglers, setToogler] = useState(-1);
+  const [togglers, setToogler] = useState([]);
   const [chartType, setChartType] = useState("line");
   return (
     <>
       <div className="row mx-0">
-        <div className="col-3 p-0">
+        <div className="col-2 p-0">
           <Dash />
         </div>
 
-        <div className="col-9 p-0" style={{ backgroundColor: "#101014" }}>
+        <div className="col-10 p-0" style={{ backgroundColor: "#101014" }}>
           <Header />
           <div style={{ maxHeight: "90vh", overflowY: "scroll " }}>
             <div className="p-3">
@@ -27,7 +28,7 @@ const Main = () => {
               </div>
             </div>
             <div className="row mx-0">
-              <div className="col-10 pe-1">
+              <div className="col-9 pe-1">
                 <div className="p-3 pe-0">
                   <div className="w-100  rounded-3 p-2" style={{ backgroundColor: "#1b1b1e" }}>
                     <div className="togglers w-100 ">
@@ -58,61 +59,52 @@ const Main = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-2 ps-1">
+              <div className="col-3 ps-1">
                 <div className=" p-3 ps-0">
                   <div className="w-100 rounded-3 p-2" style={{ backgroundColor: "#1b1b1e" }}>
                     <p className="text-light opacity-75">Market Sectors</p>
-                    <div className="form-check form-switch mb-3 ">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        role="switch"
-                        id="flexSwitchCheckChecked"
-                        checked={togglers == -1 ? true : false}
-                        onChange={() => setToogler(-1)}
-                      />
-                      <label className="form-check-label text-light" for="flexSwitchCheckChecked">
-                        All
-                      </label>
-                    </div>
-                    <div className="form-check form-switch mb-3 ">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        role="switch"
-                        id="flexSwitchCheckChecked"
-                        checked={togglers == 0 ? true : false}
-                        onChange={() => setToogler(0)}
-                      />
-                      <label className="form-check-label text-light" for="flexSwitchCheckChecked">
-                        BitCoin
-                      </label>
-                    </div>
-                    <div className="form-check form-switch mb-3 ">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        role="switch"
-                        id="flexSwitchCheckChecked"
-                        checked={togglers == 1 ? true : false}
-                        onChange={() => setToogler(1)}
-                      />
-                      <label className="form-check-label text-light" for="flexSwitchCheckChecked">
-                        Ethereum
-                      </label>
-                    </div>
-                    <div className="form-check form-switch mb-3 ">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        role="switch"
-                        id="flexSwitchCheckChecked"
-                        checked={togglers == 2 ? true : false}
-                        onChange={() => setToogler(2)}
-                      />
-                      <label className="form-check-label text-light" for="flexSwitchCheckChecked">
-                        Ripple
-                      </label>
+                    <div className="listDash">
+                      <div className="form-check form-switch mb-3 ">
+                        <input
+                          className="form-check-input"
+                          type="checkbox"
+                          role="switch"
+                          id="flexSwitchCheckChecked"
+                          checked={togglers.length == 0 ? true : false}
+                          onChange={() => setToogler([])}
+                        />
+                        <label className="form-check-label text-light" for="flexSwitchCheckChecked">
+                          All
+                        </label>
+                      </div>
+                      {coindata.map((ini, i) => {
+                        return (
+                          <div className="form-check form-switch mb-3 ">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              role="switch"
+                              id="flexSwitchCheckChecked"
+                              checked={togglers.includes(i) ? true : false}
+                              onChange={() => {
+                                togglers.includes(i)
+                                  ? setToogler(() => {
+                                      const updatedTogglers = [...togglers];
+                                      updatedTogglers.splice(togglers.indexOf(i), 1);
+                                      return updatedTogglers;
+                                    })
+                                  : setToogler([...togglers, i]);
+                              }}
+                            />
+                            <label
+                              className="form-check-label text-light text-truncate w-100"
+                              for="flexSwitchCheckChecked"
+                            >
+                              {ini.currency}
+                            </label>
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
@@ -121,6 +113,7 @@ const Main = () => {
           </div>
         </div>
       </div>
+      {console.log(togglers)}
     </>
   );
 };

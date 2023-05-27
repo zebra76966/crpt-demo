@@ -16,28 +16,33 @@ const Dash = () => {
         <hr />
         <ul className="nav nav-pills flex-column mb-auto">
           <li className="nav-item">
-            <a href="#" className="nav-link active" aria-current="page">
+            <a
+              href="#"
+              style={{ fontSize: "15px" }}
+              className="nav-link active"
+              aria-current="page"
+            >
               <i className="fa fa-home fs-6 pe-3" style={{ color: "#00c898" }}></i> Home
             </a>
           </li>
           <li>
-            <a href="#" className="nav-link text-white">
-              <i className="fa fa-tachometer fs-6 pe-3" style={{ color: "#00c898" }}></i> Dashboard
+            <a href="#" style={{ fontSize: "15px" }} className="nav-link text-white">
+              <i className="fa fa-tachometer fs-6 pe-3"></i> Dashboard
             </a>
           </li>
           <li>
-            <a href="#" className="nav-link text-white">
-              <i className="fa fa-truck fs-6 pe-3" style={{ color: "#00c898" }}></i> Orders
+            <a href="#" style={{ fontSize: "15px" }} className="nav-link text-white">
+              <i className="fa fa-truck fs-6 pe-3"></i> Orders
             </a>
           </li>
           <li>
-            <a href="#" className="nav-link text-white">
-              <i className="fa fa-list fs-6 pe-3" style={{ color: "#00c898" }}></i> Products
+            <a href="#" style={{ fontSize: "15px" }} className="nav-link text-white">
+              <i className="fa fa-list fs-6 pe-3"></i> Products
             </a>
           </li>
           <li>
-            <a href="#" className="nav-link text-white">
-              <i className="fa fa-users fs-6 pe-3" style={{ color: "#00c898" }}></i> Customers
+            <a href="#" style={{ fontSize: "15px" }} className="nav-link text-white">
+              <i className="fa fa-users fs-6 pe-3"></i> Customers
             </a>
           </li>
         </ul>

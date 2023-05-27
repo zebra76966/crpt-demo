@@ -3,47 +3,42 @@ import { Line, Bar } from "react-chartjs-2";
 import coindata from "./mockdata.json";
 import { Chart as ChartJS } from "chart.js/auto";
 const Lchart = (props) => {
-  const colors = ["orange", "purple", "skyblue"];
+  const colors = [
+    "#e74c3c",
+    "#fffc0b",
+    "#f1c40f",
+    "#2ecc71",
+    "#3498db",
+    "#9b59b6",
+    "#e67e22",
+    "#1abc9c",
+    "#e91e63",
+    "#00bcd4",
+  ];
   const data = {
     labels: coindata.map((ini) => ini.year),
     datasets:
-      props.cdata == -1
-        ? [
-            {
-              label: coindata[0].currency,
+      props.cdata.length == 0
+        ? coindata.map((ini, i) => {
+            return {
+              label: ini.currency,
               tension: 0.6,
-              data: coindata[0].data.map((ini) => ini.price),
-
-              borderColor: ["orange"],
+              data: ini.data.map((ini) => ini.price),
+              borderColor: colors[i],
+              backgroundColor: colors[i],
               borderWidth: 2,
-            },
-            {
-              label: coindata[1].currency,
+            };
+          })
+        : props.cdata.map((ini, i) => {
+            return {
+              label: coindata[ini].currency,
               tension: 0.6,
-              data: coindata[1].data.map((ini) => ini.price),
-
-              borderColor: ["purple"],
+              data: coindata[ini].data.map((ini) => ini.price),
+              borderColor: colors[ini],
+              backgroundColor: colors[ini],
               borderWidth: 2,
-            },
-            {
-              label: coindata[2].currency,
-              tension: 0.6,
-              data: coindata[2].data.map((ini) => ini.price),
-
-              borderColor: ["skyblue"],
-              borderWidth: 2,
-            },
-          ]
-        : [
-            {
-              label: coindata[props.cdata].currency,
-              tension: 0.6,
-              data: coindata[props.cdata].data.map((ini) => ini.price),
-
-              borderColor: colors[props.cdata],
-              borderWidth: 2,
-            },
-          ],
+            };
+          }),
   };
   return (
     <>
