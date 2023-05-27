@@ -19,3 +19,18 @@ body {
   overflow-x: auto;
   overflow-y: hidden;
 }
+
+.maincs .active {
+  background-color: #101014 !important;
+}
+
+.form-switch .form-check-input {
+  background-color: #1b1b1e;
+  border-color: rgb(112, 112, 112);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e") !important;
+}
+
+.form-check-input:checked {
+  background-color: #12c79a;
+  border-color: #12c79a;
+}

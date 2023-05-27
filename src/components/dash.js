@@ -4,8 +4,8 @@ const Dash = () => {
   return (
     <div className="maincs w-100 ">
       <div
-        className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark w-100"
-        style={{ width: "100%" }}
+        className="d-flex flex-column flex-shrink-0 p-3 text-whit w-100"
+        style={{ width: "100%", background: "#1b1b1e" }}
       >
         <a
           href="/"
@@ -17,27 +17,27 @@ const Dash = () => {
         <ul className="nav nav-pills flex-column mb-auto">
           <li className="nav-item">
             <a href="#" className="nav-link active" aria-current="page">
-              <i className="fa fa-home fs-5 pe-3"></i> Home
+              <i className="fa fa-home fs-6 pe-3" style={{ color: "#00c898" }}></i> Home
             </a>
           </li>
           <li>
             <a href="#" className="nav-link text-white">
-              <i className="fa fa-tachometer fs-5 pe-3"></i> Dashboard
+              <i className="fa fa-tachometer fs-6 pe-3" style={{ color: "#00c898" }}></i> Dashboard
             </a>
           </li>
           <li>
             <a href="#" className="nav-link text-white">
-              <i className="fa fa-truck fs-5 pe-3"></i> Orders
+              <i className="fa fa-truck fs-6 pe-3" style={{ color: "#00c898" }}></i> Orders
             </a>
           </li>
           <li>
             <a href="#" className="nav-link text-white">
-              <i className="fa fa-list fs-5 pe-3"></i> Products
+              <i className="fa fa-list fs-6 pe-3" style={{ color: "#00c898" }}></i> Products
             </a>
           </li>
           <li>
             <a href="#" className="nav-link text-white">
-              <i className="fa fa-users fs-5 pe-3"></i> Customers
+              <i className="fa fa-users fs-6 pe-3" style={{ color: "#00c898" }}></i> Customers
             </a>
           </li>
         </ul>

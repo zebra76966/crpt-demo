@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import { Line } from "react-chartjs-2";
+import { Line, Bar } from "react-chartjs-2";
 import coindata from "./mockdata.json";
 import { Chart as ChartJS } from "chart.js/auto";
 const Lchart = (props) => {
@@ -47,7 +47,8 @@ const Lchart = (props) => {
   };
   return (
     <>
-      <Line data={data} />
+      {props.cType == "line" && <Line data={data} />}
+      {props.cType == "bar" && <Bar data={data} />}
     </>
   );
 };

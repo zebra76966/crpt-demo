@@ -6,18 +6,19 @@ import "./master.css";
 import { useState } from "react";
 const Main = () => {
   const [togglers, setToogler] = useState(-1);
+  const [chartType, setChartType] = useState("line");
   return (
     <>
       <div className="row mx-0">
-        <div className="col-2 p-0">
+        <div className="col-3 p-0">
           <Dash />
         </div>
 
-        <div className="col-10 p-0" style={{ backgroundColor: "#171a1c" }}>
+        <div className="col-9 p-0" style={{ backgroundColor: "#101014" }}>
           <Header />
           <div style={{ maxHeight: "90vh", overflowY: "scroll " }}>
             <div className="p-3">
-              <div className="w-100 bg-dark rounded-3 p-3">
+              <div className="w-100 rounded-3 p-3" style={{ backgroundColor: "#1b1b1e" }}>
                 <h1 className="display-6 py-3 fw-light text-light"> Fundamentals for Crypto</h1>
                 <p className="text-lead text-light">
                   In publishing and graphic design, Lorem ipsum is a placeholder text commonly used
@@ -28,16 +29,40 @@ const Main = () => {
             <div className="row mx-0">
               <div className="col-10 pe-1">
                 <div className="p-3 pe-0">
-                  <div className="w-100 bg-dark rounded-3 p-2">
-                    <Lchart cdata={togglers} />
+                  <div className="w-100  rounded-3 p-2" style={{ backgroundColor: "#1b1b1e" }}>
+                    <div className="togglers w-100 ">
+                      <div
+                        className="cToggles d-flex border border-1 border-light rounded-pill p-2"
+                        style={{ width: "max-content" }}
+                      >
+                        <button
+                          className={`rounded-pill btn ${
+                            chartType == "line" ? "btn-light" : "btn-dark"
+                          }`}
+                          onClick={() => setChartType("line")}
+                        >
+                          <i className="fa fa-line-chart rounded-circle"></i>
+                        </button>
+                        <button
+                          className={`rounded-pill btn ${
+                            chartType == "bar" ? "btn-light" : "btn-dark"
+                          }`}
+                          onClick={() => setChartType("bar")}
+                        >
+                          <i className="fa fa-bar-chart"></i>
+                        </button>
+                      </div>
+                    </div>
+
+                    <Lchart cdata={togglers} cType={chartType} />
                   </div>
                 </div>
               </div>
               <div className="col-2 ps-1">
                 <div className=" p-3 ps-0">
-                  <div className="w-100 bg-dark rounded-3 p-2">
+                  <div className="w-100 rounded-3 p-2" style={{ backgroundColor: "#1b1b1e" }}>
                     <p className="text-light opacity-75">Market Sectors</p>
-                    <div className="form-check form-switch">
+                    <div className="form-check form-switch mb-3 ">
                       <input
                         className="form-check-input"
                         type="checkbox"
@@ -50,7 +75,7 @@ const Main = () => {
                         All
                       </label>
                     </div>
-                    <div className="form-check form-switch ">
+                    <div className="form-check form-switch mb-3 ">
                       <input
                         className="form-check-input"
                         type="checkbox"
@@ -63,7 +88,7 @@ const Main = () => {
                         BitCoin
                       </label>
                     </div>
-                    <div className="form-check form-switch ">
+                    <div className="form-check form-switch mb-3 ">
                       <input
                         className="form-check-input"
                         type="checkbox"
@@ -76,7 +101,7 @@ const Main = () => {
                         Ethereum
                       </label>
                     </div>
-                    <div className="form-check form-switch ">
+                    <div className="form-check form-switch mb-3 ">
                       <input
                         className="form-check-input"
                         type="checkbox"
