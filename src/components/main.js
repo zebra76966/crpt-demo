@@ -21,39 +21,24 @@ const Main = () => {
             <div className="p-3">
               <div className="w-100 rounded-3 p-3" style={{ backgroundColor: "#1b1b1e" }}>
                 <h1 className="display-6 py-3 fw-light text-light"> Fundamentals for Crypto</h1>
-                <p className="text-lead text-light">
-                  In publishing and graphic design, Lorem ipsum is a placeholder text commonly used
-                  to demonstrate the
-                </p>
+                <p className="text-lead text-light">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the</p>
               </div>
             </div>
             <div className="px-3">
-              <div
-                className="row mx-0 p-3 ps-0 pe-0 rounded"
-                style={{ backgroundColor: "#1b1b1e" }}
-              >
+              <div className="row mx-0 p-3 ps-0 pe-0 rounded" style={{ backgroundColor: "#1b1b1e" }}>
                 <div className="col-9 d-flex">
                   <div className="w-100   p-2">
                     <div className="togglers w-100 ">
-                      <div
-                        className="cToggles d-flex border border-1 border-light rounded-pill p-2"
-                        style={{ width: "max-content" }}
-                      >
-                        <button
-                          className={`rounded-pill btn ${
-                            chartType == "line" ? "btn-light" : "btn-dark"
-                          }`}
-                          onClick={() => setChartType("line")}
-                        >
+                      <div className="cToggles d-flex border border-1 border-light rounded-pill p-2" style={{ width: "max-content" }}>
+                        <button className={`rounded-pill btn ${chartType == "line" ? "btn-light" : "btn-dark"}`} onClick={() => setChartType("line")}>
                           <i className="fa fa-line-chart rounded-circle"></i>
                         </button>
-                        <button
-                          className={`rounded-pill btn ${
-                            chartType == "bar" ? "btn-light" : "btn-dark"
-                          }`}
-                          onClick={() => setChartType("bar")}
-                        >
+                        <button className={`rounded-pill btn ${chartType == "bar" ? "btn-light" : "btn-dark"}`} onClick={() => setChartType("bar")}>
                           <i className="fa fa-bar-chart"></i>
+                        </button>
+
+                        <button className={`rounded-pill btn ${chartType == "radar" ? "btn-light" : "btn-dark"}`} onClick={() => setChartType("radar")}>
+                          <i className="fa fa-codepen"></i>
                         </button>
                       </div>
                     </div>
@@ -70,18 +55,8 @@ const Main = () => {
                       <p className="text-light opacity-75">Market Sectors</p>
                       <div className="listDash">
                         <div className="form-check form-switch mb-3 ">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            role="switch"
-                            id="flexSwitchCheckChecked"
-                            checked={togglers.length == 0 ? true : false}
-                            onChange={() => setToogler([])}
-                          />
-                          <label
-                            className="form-check-label text-light"
-                            for="flexSwitchCheckChecked"
-                          >
+                          <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked={togglers.length == 0 ? true : false} onChange={() => setToogler([])} />
+                          <label className="form-check-label text-light" for="flexSwitchCheckChecked">
                             All
                           </label>
                         </div>
@@ -104,10 +79,7 @@ const Main = () => {
                                     : setToogler([...togglers, i]);
                                 }}
                               />
-                              <label
-                                className="form-check-label text-light text-truncate w-100"
-                                for="flexSwitchCheckChecked"
-                              >
+                              <label className="form-check-label text-light text-truncate w-100" for="flexSwitchCheckChecked">
                                 {ini.currency}
                               </label>
                             </div>
