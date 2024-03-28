@@ -20,13 +20,17 @@ const Calendly = () => {
         console.log(error);
       });
 
-    // Axios.post("https://auth.calendly.com/oauth/token", { grant_type: "authorization_code", redirect_uri: "https://crpt-demo.vercel.app/calendly" }, config)
-    //   .then((response) => {
-    //     console.log(response.data);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+    Axios.post(
+      "https://auth.calendly.com/oauth/token",
+      { grant_type: "authorization_code", redirect_uri: "https://crpt-demo.vercel.app/calendly", code: "mPdjOwodaKAZrh6CzSueW17rWzlzTrEpx36Dde1eADU" },
+      config
+    )
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   return <h1> Processing...</h1>;
