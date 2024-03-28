@@ -6,11 +6,11 @@ import Calendly from "./components/calendly";
 import { useEffect, useState } from "react";
 
 function App() {
-  cosnt[(page, setPage)] = useState("home");
+  const [page, setPage] = useState("home");
 
   useEffect(() => {
     if (window.location.pathname == "/calendly") {
-      setpage("calendly");
+      setPage("calendly");
     } else {
       setPage("home");
     }
