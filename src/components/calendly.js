@@ -10,7 +10,7 @@ const Calendly = () => {
         Authorization: "Basic NDh1enJSa3RYTHA4M0EwTGx6WTBHdWFPSGhVdTJLTWpxa2JtQk9jbDJ0NDplYXIwVHR1OEJwRnRLUXFwY1NuNEJIZFRxRGFFR1phOE42OEMtTGhLQk5B",
       },
     };
-    Axios.get("https://auth.calendly.com/oauth/token", { grant_type: "authorization_code", redirect_uri: "https://crpt-demo.vercel.app/calendly" }, config)
+    Axios.post("https://auth.calendly.com/oauth/token", { grant_type: "authorization_code", redirect_uri: "https://crpt-demo.vercel.app/calendly" }, config)
       .then((response) => {
         console.log(response.data);
       })
