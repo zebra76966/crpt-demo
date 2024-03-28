@@ -1,7 +1,6 @@
 import React from "react";
 
 import Axios from "axios";
-import { Defaults } from "chart.js/dist/core/core.defaults";
 
 const Calendly = () => {
   useEffect(() => {
