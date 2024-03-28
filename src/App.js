@@ -18,7 +18,7 @@ function App() {
 
   return (
     <>
-      {page == "home" && <Main />}
+      {/* {page == "home" && <Main />} */}
       {page == "calendly" && <Calendly />}
     </>
   );
