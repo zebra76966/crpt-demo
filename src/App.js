@@ -14,12 +14,11 @@ function App() {
     } else {
       setPage("home");
     }
-  });
+  }, []);
 
   return (
     <>
-      {/* {page == "home" && <Main />} */}
-      {page == "calendly" && <Calendly />}
+      <Main />
     </>
   );
 }
